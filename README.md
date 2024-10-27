@@ -3,6 +3,12 @@ A fully SwiftUI-based iOS app to note everything.
 
 [![Download on the App Store](https://raw.githubusercontent.com/Dimillian/IceCubesApp/main/Images/download_on_the_app_store.svg)](https://apps.apple.com/us/app/id6657973126)
 
+## Serverless
+登录/注册（无需JWT验证）
+https://github.com/XunMengWinter/fc-mymx-oss-pub
+笔记（需要JWT验证）
+https://github.com/XunMengWinter/fc-mymx-oss
+
 ## Demo
 [![Click to watch](https://mymx2-oss.oss-cn-shanghai.aliyuncs.com/doc/img-aichongshe-oss-demo.jpg)](https://www.bilibili.com/video/BV1h7eFecEEt/?share_source=copy_web&vd_source=f37f4981955278d3532660e4934b6ad2)
 Click to watch
