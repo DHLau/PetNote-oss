@@ -280,6 +280,7 @@ struct MyTabView: View {
                 }
             Rectangle()
                 .foregroundStyle(.clear)
+                .contentShape(.rect)
                 .overlay{
                     Text("AI")
                         .font(active == .mine ? .headline : .callout)
