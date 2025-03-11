@@ -23,6 +23,10 @@
 		5812055F2C5387F000FC6D36 /* SmsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5812055E2C5387F000FC6D36 /* SmsResult.swift */; };
 		5813DA992C92B7C7002B60F8 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 5813DA982C92B7C7002B60F8 /* Localizable.xcstrings */; };
 		5813DA9C2C92BB54002B60F8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5813DA9A2C92BB54002B60F8 /* InfoPlist.strings */; };
+		58172B372D80A1C20093021B /* TabooVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58172B362D80A1BD0093021B /* TabooVM.swift */; };
+		58172B392D80A7990093021B /* TabooModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58172B382D80A7890093021B /* TabooModel.swift */; };
+		58172B3B2D80B14C0093021B /* ChatVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58172B3A2D80B1490093021B /* ChatVM.swift */; };
+		58172B3D2D80B1940093021B /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58172B3C2D80B1930093021B /* ChatMessage.swift */; };
 		5818B8D12C42677200B73DF3 /* NoteVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5818B8D02C42677200B73DF3 /* NoteVM.swift */; };
 		581E82E32C5D069300E3330D /* EditPetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581E82E22C5D069300E3330D /* EditPetView.swift */; };
 		581E82E52C5DA37500E3330D /* DeletePetVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581E82E42C5DA37500E3330D /* DeletePetVM.swift */; };
@@ -173,6 +177,10 @@
 		5813DA9D2C92BB7B002B60F8 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		5813DA9E2C92BB7E002B60F8 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		5813DA9F2C92BB80002B60F8 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		58172B362D80A1BD0093021B /* TabooVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabooVM.swift; sourceTree = "<group>"; };
+		58172B382D80A7890093021B /* TabooModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabooModel.swift; sourceTree = "<group>"; };
+		58172B3A2D80B1490093021B /* ChatVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVM.swift; sourceTree = "<group>"; };
+		58172B3C2D80B1930093021B /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
 		5818B8D02C42677200B73DF3 /* NoteVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteVM.swift; sourceTree = "<group>"; };
 		581E82E22C5D069300E3330D /* EditPetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPetView.swift; sourceTree = "<group>"; };
 		581E82E42C5DA37500E3330D /* DeletePetVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeletePetVM.swift; sourceTree = "<group>"; };
@@ -353,6 +361,8 @@
 		582C0CF62C2486ED0022FFC6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				58172B3A2D80B1490093021B /* ChatVM.swift */,
+				58172B362D80A1BD0093021B /* TabooVM.swift */,
 				585AC1402C2867D900843BA0 /* CityPickerVM.swift */,
 				582C0CF72C2486FB0022FFC6 /* PhotographVM.swift */,
 				58E6B8682C256EE4000AEF31 /* WeatherVM.swift */,
@@ -431,6 +441,8 @@
 		589AEFDB2C243C7300FD8998 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				58172B3C2D80B1930093021B /* ChatMessage.swift */,
+				58172B382D80A7890093021B /* TabooModel.swift */,
 				588B75412C23EA48001011A7 /* Photo.swift */,
 				589AEFDC2C243D0200FD8998 /* PhotoModel.swift */,
 				589AEFDE2C2452F500FD8998 /* PhotoResult.swift */,
@@ -725,6 +737,7 @@
 				58B508E82C3BB0F4006F0DB7 /* LoginResult.swift in Sources */,
 				581162C32C20811200A0B708 /* CardHome.swift in Sources */,
 				588B75442C23ECD5001011A7 /* MockData.swift in Sources */,
+				58172B392D80A7990093021B /* TabooModel.swift in Sources */,
 				58D8FEED2C3B26F800538CBB /* AddPetVM.swift in Sources */,
 				581162C52C2081D600A0B708 /* LibraryView.swift in Sources */,
 				58EB6FF72C5B61F500581F5D /* NetworkMonitor.swift in Sources */,
@@ -744,6 +757,7 @@
 				58D806D12C5660CD00BDAC70 /* ShopVM.swift in Sources */,
 				58A283A12C4EEAC90055E0FD /* ImagePageView.swift in Sources */,
 				58D8FEDE2C39747400538CBB /* AddPetView.swift in Sources */,
+				58172B3D2D80B1940093021B /* ChatMessage.swift in Sources */,
 				58C58CC22C96892100317A8F /* LocationService.swift in Sources */,
 				58A283992C4CD7840055E0FD /* ImageCropper.swift in Sources */,
 				5886EEA82C5F88A700F15F23 /* RadioButton.swift in Sources */,
@@ -767,6 +781,7 @@
 				58D8FEE62C3AD80D00538CBB /* UserModel.swift in Sources */,
 				58D8FED72C39018A00538CBB /* NoteView.swift in Sources */,
 				58B508EC2C3BC2E0006F0DB7 /* MineView.swift in Sources */,
+				58172B3B2D80B14C0093021B /* ChatVM.swift in Sources */,
 				581E82E32C5D069300E3330D /* EditPetView.swift in Sources */,
 				581E82E52C5DA37500E3330D /* DeletePetVM.swift in Sources */,
 				5886EEA22C5E274A00F15F23 /* PreviewOrderView.swift in Sources */,
@@ -776,6 +791,7 @@
 				589AD4DB2C44159100BE2B10 /* Extensions.swift in Sources */,
 				585AC1412C2867D900843BA0 /* CityPickerVM.swift in Sources */,
 				58E93E7D2C2A845300A90AA5 /* DynamicKeyImageDict.swift in Sources */,
+				58172B372D80A1C20093021B /* TabooVM.swift in Sources */,
 				5843DB8C2C61FF7200173D98 /* PostOrderVM.swift in Sources */,
 				585AC1462C287ED400843BA0 /* CityModel.swift in Sources */,
 				58AC3D292C58C7E80030B16F /* GoodsRow.swift in Sources */,

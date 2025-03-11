@@ -11,6 +11,7 @@ class Urls{
     private static let BASE_PUB_URL = "https://mymx-oss-pub-kkxdbyqfnl.cn-hangzhou.fcapp.run/"
     private static let BASE_URL = "https://mymx-oss-zihhjvkadm.cn-hangzhou.fcapp.run/api/"
     private static let BASE_STS_URL = "https://mymx-oss-zihhjvkadm.cn-hangzhou.fcapp.run/sts/"
+    private static let BASE_3rd_URL = "https://mymx-oss-rd-kkxsgwqfnl.cn-hangzhou.fcapp.run/"
     
     static let CAT_FACT = "https://zzz.pet:3000/cat-fact"
 
@@ -32,5 +33,7 @@ class Urls{
     static let GET_NOTE_LIST = BASE_URL + "getNoteList"
     
     static let DELETE_NOTE = BASE_URL + "deleteNote"
-
+    
+    static let SEARCH_TABOO = BASE_3rd_URL + "searchTaboo"
+    static let AI_CHAT_DOCTOR = BASE_3rd_URL + "aiChat/doctor"
 }
