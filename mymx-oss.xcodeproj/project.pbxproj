@@ -82,6 +82,8 @@
 		58B508EC2C3BC2E0006F0DB7 /* MineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58B508EB2C3BC2E0006F0DB7 /* MineView.swift */; };
 		58C58CC22C96892100317A8F /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C58CC12C96892100317A8F /* LocationService.swift */; };
 		58CBD2F42C2D430700951251 /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58CBD2F32C2D430700951251 /* Urls.swift */; };
+		58D540842D80394B00CCEB7B /* TabooView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D540832D80394500CCEB7B /* TabooView.swift */; };
+		58D540862D803D9500CCEB7B /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D540852D803D9000CCEB7B /* ChatView.swift */; };
 		58D806CD2C56354D00BDAC70 /* GoodsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D806CC2C56354D00BDAC70 /* GoodsModel.swift */; };
 		58D806CF2C5642FC00BDAC70 /* GoodsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D806CE2C5642FC00BDAC70 /* GoodsResult.swift */; };
 		58D806D12C5660CD00BDAC70 /* ShopVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D806D02C5660CD00BDAC70 /* ShopVM.swift */; };
@@ -222,6 +224,8 @@
 		58C08F172C9E725400EC0E62 /* mymxRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mymxRelease.entitlements; sourceTree = "<group>"; };
 		58C58CC12C96892100317A8F /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
 		58CBD2F32C2D430700951251 /* Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
+		58D540832D80394500CCEB7B /* TabooView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabooView.swift; sourceTree = "<group>"; };
+		58D540852D803D9000CCEB7B /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		58D806CC2C56354D00BDAC70 /* GoodsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsModel.swift; sourceTree = "<group>"; };
 		58D806CE2C5642FC00BDAC70 /* GoodsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsResult.swift; sourceTree = "<group>"; };
 		58D806D02C5660CD00BDAC70 /* ShopVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopVM.swift; sourceTree = "<group>"; };
@@ -338,6 +342,7 @@
 				58AC3D272C58C7BE0030B16F /* shop */,
 				588D194F2C25F76F00CE51CE /* PageView */,
 				5867D1B22C3EA7D2006BA997 /* Mine */,
+				58D540802D80390400CCEB7B /* AI */,
 				581162C42C2081D600A0B708 /* LibraryView.swift */,
 				58A283A22C4F71BE0055E0FD /* CommunityView.swift */,
 				58F1146B2C58DFDB004B9779 /* ForumView.swift */,
@@ -489,6 +494,15 @@
 				58C08EFC2C9E6E8500EC0E62 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		58D540802D80390400CCEB7B /* AI */ = {
+			isa = PBXGroup;
+			children = (
+				58D540852D803D9000CCEB7B /* ChatView.swift */,
+				58D540832D80394500CCEB7B /* TabooView.swift */,
+			);
+			path = AI;
 			sourceTree = "<group>";
 		};
 		58D8FED82C392FBB00538CBB /* Note */ = {
@@ -686,6 +700,7 @@
 				58CBD2F42C2D430700951251 /* Urls.swift in Sources */,
 				589AEFDF2C2452F500FD8998 /* PhotoResult.swift in Sources */,
 				58E6B8692C256EE4000AEF31 /* WeatherVM.swift in Sources */,
+				58D540862D803D9500CCEB7B /* ChatView.swift in Sources */,
 				58E6B86D2C259640000AEF31 /* WeatherItem.swift in Sources */,
 				5846101F2C690D1000BBA5F1 /* JoinRankingView.swift in Sources */,
 				584A53DD2C64A8E0004F4F20 /* CouponView.swift in Sources */,
@@ -716,6 +731,7 @@
 				58D8FEE42C3ABE0600538CBB /* LoginView.swift in Sources */,
 				5818B8D12C42677200B73DF3 /* NoteVM.swift in Sources */,
 				58DCDB522C8B40460019C790 /* MapSheetView.swift in Sources */,
+				58D540842D80394B00CCEB7B /* TabooView.swift in Sources */,
 				58F59B7D2C468E2A004CE576 /* BottomRightCornerClipShape.swift in Sources */,
 				588D19502C25F76F00CE51CE /* PageControl.swift in Sources */,
 				581162B42C2075F800A0B708 /* mymxApp.swift in Sources */,

@@ -33,33 +33,41 @@ struct MineView: View {
                     .padding(.top, -80)
                     .padding(.bottom)
                     
-                    HStack(spacing: 0){
-                        LazyImage(url: URL(string: "https://maoxun.oss-cn-hangzhou.aliyuncs.com/image/other/img_pet_doctor.jpg")){ state in
-                            state.image?
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 64, height: 64)
+                    NavigationLink(destination: ChatView(), label: {
+                        
+                        HStack(spacing: 0){
+                            LazyImage(url: URL(string: "https://maoxun.oss-cn-hangzhou.aliyuncs.com/image/other/img_pet_doctor.jpg")){ state in
+                                state.image?
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 64, height: 64)
+                            }
+                            .frame(width: 64, height: 64)
+                            .clipShape(Circle())
+                            Text("AI宠医生")
+                                .padding(.leading)
+                            Spacer()
                         }
-                        .clipShape(Circle())
-                        Text("AI宠医生")
-                            .padding(.leading)
-                        Spacer()
-                    }
-                    .padding()
+                        .padding()
+                        
+                    })
                     
-                    HStack(spacing: 0){
-                        LazyImage(url: URL(string: "https://maoxun.oss-cn-hangzhou.aliyuncs.com/image/other/img_orange_cat.jpeg")){ state in
-                            state.image?
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 64, height: 64)
+                    NavigationLink(destination: TabooView(), label:{
+                        HStack(spacing: 0){
+                            LazyImage(url: URL(string: "https://maoxun.oss-cn-hangzhou.aliyuncs.com/image/other/img_orange_cat.jpeg")){ state in
+                                state.image?
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 64, height: 64)
+                            }
+                            .frame(width: 64, height: 64)
+                            .clipShape(Circle())
+                            Text("猫咪食物禁忌")
+                                .padding(.leading)
+                            Spacer()
                         }
-                        .clipShape(Circle())
-                        Text("猫咪食物禁忌")
-                            .padding(.leading)
-                        Spacer()
-                    }
-                    .padding()
+                        .padding()
+                    })
                 }
             }
             .ignoresSafeArea(edges: .top)
