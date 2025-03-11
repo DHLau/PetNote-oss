@@ -35,15 +35,19 @@ struct PhotoItem: View {
             .padding(.leading)
             .padding(.top)
             
-            PhotoPageView(pages: photo.images.map({
-                LazyImage(url: URL(string: $0.imageUrl)){phase in
-                    phase.image?.resizable()
-                        .scaledToFit()
-                        .transition(.opacity.animation(.smooth))
+            Color.clear
+                .aspectRatio(max(9.0/16, CGFloat(photo.images[0].width) / CGFloat( photo.images[0].height + 2)), contentMode: .fill)
+                .overlay{
+                    PhotoPageView(pages: photo.images.map({ image in
+                        LazyImage(url: URL(string: image.imageUrl)){phase in
+                            phase.image?.resizable()
+                                .scaledToFit()
+                                .transition(.opacity.animation(.smooth))
+                        }
+                        .contentShape(.rect)
+                    }))
                 }
-            }))
-            .frame(maxWidth: .infinity)
-            .aspectRatio(CGFloat(photo.images[0].width) / CGFloat( photo.images[0].height + 1), contentMode: .fill)
+                .clipped()
             
             VStack(alignment: .leading){
                 if(!photo.title.isEmpty){

@@ -133,6 +133,9 @@
     "15557128842" : {
 
     },
+    "AI" : {
+
+    },
     "Message" : {
 
     },
@@ -236,6 +239,7 @@
 
     },
     "我" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

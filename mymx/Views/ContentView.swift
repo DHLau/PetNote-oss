@@ -50,20 +50,56 @@ struct ContentView: View {
                     }
                 })
             
-            TabView(selection: $selection, content: {
-                CardHome(weatherVM: weatherVM, factsVM: factsVM, photoVM: photoVM)
-                    .tag(Tab.home)
-                NoteView(viewModel: noteVM)
-                    .tag(Tab.note)
-                EmptyView()
-                    .tag(Tab.add)
-                CommunityView(shopVM: shopVM)
-                    .tag(Tab.community)
-                MineView()
-                    .tag(Tab.mine)
-            })
+            VStack(spacing: 0){
+                ZStack{
+                    switch selection {
+                    case .home:
+                        CardHome(weatherVM: weatherVM, factsVM: factsVM, photoVM: photoVM)
+                            .tag(Tab.home)
+                    case .note:
+                        NoteView(viewModel: noteVM)
+                            .tag(Tab.note)
+                    case .add:
+                        EmptyView()
+                            .tag(Tab.add)
+                    case .community:
+                        CommunityView(shopVM: shopVM)
+                            .tag(Tab.community)
+                    case .mine:
+                        MineView()
+                            .tag(Tab.mine)
+                    }
+                    
+                    if modelData.user == nil && selection != .home{
+                        LoginView()
+                            .onDisappear{
+                                if(modelData.user != nil){
+                                    // 登录成功的逻辑
+                                    print("Login success")
+                                    if let rank = modelData.user?.joinRanking{
+                                        self.joinRanking = rank
+                                    }
+                                    modelData.getPetList()
+                                    if(selection == .note){
+                                        noteVM.getNoteList()
+                                    }
+                                }
+                            }
+                    }
+                    
+                }
+                
+                Spacer(minLength: 0)
+                MyTabView(active: $selection, showAddNote: $showAddNote)
+                        .background(.lightBg)
+                        .contentShape(.rect)
+                        .onTapGesture {
+                            print("tap tab view")
+                        }
+            }
+            .ignoresSafeArea(.keyboard)
             
-            VStack{
+            VStack(spacing: 0){
                 if addNoteVM.loading || addNoteVM.progress == 1 || !addNoteVM.errorMsg.isEmpty{
                     VStack{
                         HStack{
@@ -114,32 +150,10 @@ struct ContentView: View {
                     .background(.regularMaterial)
                     .transition(.offset(x:0, y: -128))
                 }
-                
-                if modelData.user == nil && selection != .home{
-                    LoginView()
-                        .onDisappear{
-                            if(modelData.user != nil){
-                                // 登录成功的逻辑
-                                print("Login success")
-                                if let rank = modelData.user?.joinRanking{
-                                    self.joinRanking = rank
-                                }
-                                modelData.getPetList()
-                                if(selection == .note){
-                                    noteVM.getNoteList()
-                                }
-                            }
-                        }
-                }
                 Spacer()
-                MyTabView(active: $selection, showAddNote: $showAddNote)
-                    .background(.clear)
-                    .contentShape(.rect)
-                    .onTapGesture {
-                        print("tap tab view")
-                    }
             }
             .ignoresSafeArea(.keyboard)
+            
             if joinRanking > 0 {
                 JoinRankingView(joinRanking: $joinRanking)
                     .transition(.opacity)
@@ -245,7 +259,7 @@ struct MyTabView: View {
                         
                     }
                 }
-                .frame(minHeight: 42)
+                .frame(minHeight: 50)
                 .onTapGesture {
                     
                 }
@@ -267,7 +281,7 @@ struct MyTabView: View {
             Rectangle()
                 .foregroundStyle(.clear)
                 .overlay{
-                    Text("我")
+                    Text("AI")
                         .font(active == .mine ? .headline : .callout)
                         .bold()
                         .foregroundStyle(active == .mine ? .primary : .secondary)

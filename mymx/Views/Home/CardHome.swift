@@ -85,7 +85,8 @@ struct CardHome: View{
                             .padding(.bottom)
                     }
                 }
-            }.onAppear {
+            }
+            .onAppear {
                 if(weatherVM.poetryWeathers.isEmpty){
                     weatherVM.fetchWeather(city: modelData.city)
                 }

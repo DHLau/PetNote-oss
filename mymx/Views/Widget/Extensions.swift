@@ -91,3 +91,14 @@ struct TextFieldGrayBackgroundColor: ViewModifier {
             .foregroundColor(.primary)
     }
 }
+
+struct CustomWindowStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        #if os(macOS)
+        content
+            .windowStyle(HiddenTitleBarWindowStyle()) // 仅在 macOS 上应用
+        #else
+        content
+        #endif
+    }
+}
