@@ -39,7 +39,7 @@ Click to watch
 - [x] MapKit add cover
 - [x] MapKit Search
 - [x] Widget
-- [ ] AI Agent
+- [x] AI Agent
 
 
 
