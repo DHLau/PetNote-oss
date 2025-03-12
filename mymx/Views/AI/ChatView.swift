@@ -13,11 +13,13 @@ struct ChatView: View {
     
     var body: some View {
         VStack(spacing: 0){
-            ScrollView{
-                VStack(alignment: .leading, spacing: 16) {
-                    Text("🤖 Instruction (即AI的人设，以下为interview模式)：")
-                        .font(.title2)
-                    Text("""
+            ScrollViewReader { scrollProxy in
+                
+                ScrollView{
+                    VStack(alignment: .leading, spacing: 16) {
+                        Text("🤖 Instruction (即AI的人设，以下为interview模式)：")
+                            .font(.title2)
+                        Text("""
           你是一名经验丰富的宠物医生，专精于宠物疾病诊断与治疗。用户会向你咨询宠物健康问题，你的目标是提供准确、专业的建议。
           
           请按照以下步骤进行：
@@ -38,47 +40,48 @@ struct ChatView: View {
           
           请确保你的回答 **简洁清晰**，并在信息不足时 **优先收集必要信息**，而不是直接给出诊断。
         """)
-                    .padding()
-                    
-                    ForEach(viewModel.messageList) { message in
-                        HStack {
-                            if message.isUser {
-                                Spacer()
-                                Text(message.content)
-                                    .textSelection(.enabled)
-                                    .padding()
-                                    .lineSpacing(6)
-                                    .background(.green)
-                                    .foregroundStyle(.white)
-                                    .cornerRadius(10)
-                                    .frame(maxWidth: max(300, screenWidth * 0.5), alignment: .trailing)
-                                    .padding(.leading, 80)
-                            } else {
-                                Text(message.content)
-                                    .textSelection(.enabled)
-                                    .padding()
-                                    .lineSpacing(6)
-                                    .background(.searchBg)
-                                    .cornerRadius(10)
-                                    .frame(maxWidth: max(300, screenWidth * 0.5), alignment: .leading)
-                                    .padding(.trailing, 80)
-                                Spacer()
+                        .padding()
+                        
+                        ForEach(viewModel.messageList) { message in
+                            HStack {
+                                if message.isUser {
+                                    Spacer()
+                                    Text(message.content)
+                                        .textSelection(.enabled)
+                                        .padding()
+                                        .background(.blue.opacity(0.2))
+                                        .cornerRadius(16)
+                                        .padding(.leading, 80)
+                                } else {
+                                    Text(.init(message.content))
+                                        .textSelection(.enabled)
+                                        .padding()
+                                        .background(.searchBg)
+                                        .cornerRadius(16)
+                                    Spacer()
+                                }
                             }
                         }
-                    }
-                    
-                    if viewModel.loading{
-                        HStack{
-                            Text("思考中 💭")
-                            ProgressView()
-                                .padding()
-                            Spacer()
+                        
+                        if viewModel.loading{
+                            HStack{
+                                Text("思考中 💭")
+                                ProgressView()
+                                    .padding()
+                                Spacer()
+                            }
+                            .id("loadingView") // 给每条消息加上唯一 ID
                         }
                     }
+                    .padding()
                 }
-                .padding()
+                .scrollDismissesKeyboard(.immediately)
+                .onChange(of: viewModel.loading, {
+                    withAnimation {
+                        scrollProxy.scrollTo("loadingView", anchor: .bottom)
+                    }
+                })
             }
-            .scrollDismissesKeyboard(.immediately)
             HStack{
                 TextField("描述一下宠物症状", text: $inputText)
                     .padding()
@@ -89,6 +92,7 @@ struct ChatView: View {
                         }
                     }
                 Image(systemName: "paperplane.fill")
+                    .foregroundStyle(.blue)
                     .padding()
                     .onTapGesture {
                         if viewModel.chatWithDoctor(chatContent: inputText){
